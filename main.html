@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Water Bottles | Portfolio</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Internal CSS -->
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family:'arial';
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-a-large-bottle-of-pure-water-on-blue-background-image_15674939.jpg') no-repeat center center/cover;
+      height: 89vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      background: #00b4d8;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0077b6;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #0077b6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 229px;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Features Grid */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #0077b6;
+    }
+
+    /* Contact Form */
+    .contact p{
+	margin-left:429px;
+    }
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .contact button {
+      padding: 10px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .contact button:hover {
+      background: #00b4d8;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+    }
+    footer .p{
+	margin-left:999px;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h2{font-size:2rem;}
+      .hero p{font-size:1rem;}
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <h1 class="logo">HASSARO_LAB's</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Custom Water Bottles, Your Way</h2>
+      <p>Design, personalize, and carry your own style everywhere.</p>
+      <a href="#portfolio" class="btn">See Our Collection</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We specialize in customizable water bottles that are perfect for gifting, personal use, or corporate branding. Choose your design, colors, and add text or logos — we make it yours.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Our Custom Bottles</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img class="img1" src="https://images.unsplash.com/photo-1663870316229-cb3986d34e8c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y3VzdG9tJTIwd2F0ZXIlMjBib3RsZXMlMjB3aXRoJTIwbG9nb3N8ZW58MHx8MHx8fDA%3D">
+          <div class="overlay">
+            <h3>Electric Touch Thermos</h3>
+            <p>Touch-sensitive electric bottle with temperature display.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img class="img1" src="https://images.unsplash.com/photo-1590451340757-99b7215aad71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y3VzdG9tJTIwd2F0ZXIlMjBib3RsZXMlMjB3aXRoJTIwbG9nb3N8ZW58MHx8MHx8fDA%3D">
+          <div class="overlay">
+            <h3>Cap Customization</h3>
+            <p>Choose your lid style and color for a personal touch.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img class="img1" src="https://images.unsplash.com/photo-1690695721943-ebf8d5ca46c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGN1c3RvbSUyMHdhdGVyJTIwYm90bGVzJTIwd2l0aCUyMGxvZ29zfGVufDB8fDB8fHww">
+          <div class="overlay">
+            <h3>Clock Design Bottle</h3>
+            <p>Add a custom clock display to your bottle cap.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img class="img1" src="https://media.istockphoto.com/id/1272678437/photo/3d-illustration-water-bottle.webp?a=1&b=1&s=612x612&w=0&k=20&c=DEO_fRpOTtgxdkgecmMbFbT1KeTm2_ljVG5CI5wbpxI=">
+          <div class="overlay">
+            <h3>Corporate Logo Bottle</h3>
+            <p>Perfect for corporate branding or promotional gifts.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img class="img1" src="https://media.istockphoto.com/id/1093730694/photo/splash-of-clear-water-with-pet-water-bottle-in-the-middle-isolated-on-black-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=OWr08M9F3B7RIq-dvH9i2J44K_oV5FI7emB3z1i1ics=">
+          <div class="overlay">
+            <h3>Kids Custom Bottles</h3>
+            <p>Fun personalized bottles for kids with names or characters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Custom Design</h3>
+          <p>Pick your own colors, patterns, and text for a unique bottle.</p>
+        </div>
+        <div class="feature">
+          <h3>High Quality</h3>
+          <p>Durable, eco-friendly, and designed to last for years.</p>
+        </div>
+        <div class="feature">
+          <h3>Gift Ready</h3>
+          <p>Perfect for personal gifts, corporate giveaways, or events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Ready to customize your bottle? Get in touch!</p>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hassaro_Lab's. All Rights Reserved.</p>
+	<p class="p">Design by Hassaro_Lab's</p>
+  </footer>
+
+  <!-- Internal JS -->
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('header nav ul li a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
